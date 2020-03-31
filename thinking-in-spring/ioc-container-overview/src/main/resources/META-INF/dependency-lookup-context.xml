@@ -11,14 +11,13 @@ http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
         <property name="name" value="张三"/>
     </bean>
 
+    <bean id="superUser" class="com.karl.ioc.overview.dependency.domain.SuperUser" parent="user" primary="true">
+        <property name="address" value="临泉县"/>
+    </bean>
+
     <bean id="objectFactoryCreatingFactoryBean"
           class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user"/>
-    </bean>
-
-
-    <bean id="superUser" class="com.karl.ioc.overview.dependency.domain.SuperUser" parent="user" primary="true">
-        <property name="address" value="临泉县"/>
     </bean>
 
 

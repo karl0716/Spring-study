@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+
+         http://www.springframework.org/schema/util
+         http://www.springframework.org/schema/util/spring-util-2.0.xsd
+
+
+">
+
+    <!-- 通过导入复用的dependency-lookup-context.xml-->
+    <import resource="dependency-lookup-context.xml"/>
+
+    <bean id="userRepository" class="com.karl.ioc.overview.dependency.repository.UserRepository"
+          autowire="byType"> <!-- Auto -Wiring 自动注入 -->
+<!--        <property name="userCollection">-->
+<!--            &lt;!&ndash;硬编码手动注入 &ndash;&gt;-->
+<!--            <util:list>-->
+<!--                <ref bean="user"/>-->
+<!--                <ref bean="superUser"/>-->
+<!--            </util:list>-->
+<!--        </property>-->
+    </bean>
+
+</beans>
