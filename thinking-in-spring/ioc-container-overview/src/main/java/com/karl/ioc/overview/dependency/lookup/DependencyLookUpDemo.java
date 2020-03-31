@@ -1,10 +1,10 @@
 package com.karl.ioc.overview.dependency.lookup;
 
+import com.karl.ioc.overview.dependency.annotion.Super;
 import com.karl.ioc.overview.dependency.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
-import org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Map;
@@ -32,11 +32,23 @@ public class DependencyLookUpDemo {
         // 单一的Bean
 //        lookupByType(beanFactory);
         //集合的Bean
-        lookupCollectionType(beanFactory);
+//        lookupCollectionType(beanFactory);
+        lookupByAnnotationType(beanFactory);
 
 
 
 
+
+
+    }
+
+    private static void lookupByAnnotationType(BeanFactory beanFactory) {
+
+        if(beanFactory instanceof ListableBeanFactory){
+            ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
+            Map<String, Object> beansWithAnnotation = listableBeanFactory.getBeansWithAnnotation(Super.class);
+            System.out.println(beansWithAnnotation);
+        }
 
     }
 
