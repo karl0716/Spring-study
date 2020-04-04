@@ -32,6 +32,12 @@ public class AnnotationApplicationAsIocContainer {
     }
 
 
+
+
+
+
+
+
     @Bean
     public User user(){
         User user = new User();
