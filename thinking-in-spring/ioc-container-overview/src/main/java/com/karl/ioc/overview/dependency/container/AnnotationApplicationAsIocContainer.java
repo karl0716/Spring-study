@@ -25,6 +25,10 @@ public class AnnotationApplicationAsIocContainer {
         applicationContext.refresh();
         lookupCollectionType(applicationContext);
 
+
+        // 停止容器
+        applicationContext.close();
+
     }
 
 

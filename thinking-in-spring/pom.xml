@@ -11,6 +11,7 @@
 
     <modules>
         <module>ioc-container-overview</module>
+        <module>spring-bean</module>
     </modules>
 
     <properties>
@@ -25,7 +26,9 @@
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+
         </dependencies>
+
     </dependencyManagement>
 
 
